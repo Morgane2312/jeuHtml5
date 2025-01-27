@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 body, html {
     margin: 0;
     padding: 0;
@@ -75,77 +74,6 @@ button.choose-skin:hover {
     background-color: #72B6E3;
 }
 
-
-@media (max-width: 480px) {
-    .container {
-        padding: 15px;
-        width: 100%;
-        max-width: 85%;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    .skin-selection {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        align-items: center;
-        justify-items: center;
-        gap: 0px;
-    }
-
-    .skin {
-        display: flex;
-        width: 60%;
-        text-align: center;
-        background: #f9f9f9;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    button.choose-skin {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
-        max-width: 90%;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    .skin-selection {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        align-items: center;
-        justify-items: center;
-    }
-
-    .skin {
-        width: 100%;
-        max-width: 180px;
-        padding: 15px;
-        margin-bottom: 0px;
-    }
-
-    button.choose-skin {
-        font-size: 0.95rem;
-        padding: 9px 18px;
-    }
-}
-
-
 @media (max-width: 1080px) {
     .container {
         padding: 20px;
@@ -160,19 +88,50 @@ button.choose-skin:hover {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
-        align-items: center;
-        justify-items: center;
+        place-items: center;
     }
 
     .skin {
         width: 100%;
         max-width: 180px;
         padding: 15px;
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 
     button.choose-skin {
         font-size: 0.95rem;
         padding: 9px 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .skin-selection {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        max-width: 85%;
+    }
+
+    .skin-selection {
+        gap: 0;
+    }
+
+    .skin {
+        width: 60%;
+        padding: 10px;
+    }
+
+    button.choose-skin {
+        font-size: 0.9rem;
+        padding: 8px 16px;
     }
 }
