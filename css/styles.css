@@ -123,3 +123,29 @@ button:hover {
         font-size: 12px;
     }
 }
+
+.password-container {
+    display: flex;
+    position: relative;
+    width: 85%;
+    margin: 10px auto;
+}
+
+.password-container input {
+    width: 100%;
+}
+
+.eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.eye-icon:hover {
+    opacity: 1;
+}

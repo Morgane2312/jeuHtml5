@@ -123,7 +123,10 @@ ob_end_clean();
                 <input type="email" id="connexion-email" placeholder="Email" required autocomplete="email">
                 
                 <label for="connexion-password"></label>
-                <input type="password" id="connexion-password" placeholder="Mot de passe" required autocomplete="current-password">
+                <div class="password-container">
+                    <input type="password" id="connexion-password" placeholder="Mot de passe" required autocomplete="current-password">
+                    <img src="./assets/eye.png" alt="Voir mot de passe" class="eye-icon" id="toggle-password-connexion">
+                </div>
                 
                 <button type="submit">Se connecter</button>
                 
@@ -135,9 +138,9 @@ ob_end_clean();
                 </p>
             </form>
 
-
             <form id="formulaire-inscription" class="hidden">
                 <h2>Inscription</h2>
+                
                 <label for="inscription-pseudo"></label>
                 <input type="text" id="inscription-pseudo" placeholder="Pseudo" required autocomplete="username">
                 
@@ -145,7 +148,10 @@ ob_end_clean();
                 <input type="email" id="inscription-email" placeholder="Email" required autocomplete="email">
                 
                 <label for="inscription-password"></label>
-                <input type="password" id="inscription-password" placeholder="Mot de passe" required autocomplete="new-password">
+                <div class="password-container">
+                    <input type="password" id="inscription-password" placeholder="Mot de passe" required autocomplete="new-password">
+                    <img src="./assets/eye.png" alt="Voir mot de passe" class="eye-icon" id="toggle-password-inscription">
+                </div>
                 
                 <button type="submit">S'inscrire</button>
                 
@@ -156,6 +162,7 @@ ob_end_clean();
 
             <form id="formulaire-mot-de-passe-oublie" class="hidden">
                 <h2>Mot de passe oublié</h2>
+                
                 <label for="mdp-oublie-email"></label>
                 <input type="email" id="mdp-oublie-email" placeholder="Votre email" required autocomplete="email">
                 
@@ -170,12 +177,14 @@ ob_end_clean();
         <div id="message-bienvenue" class="hidden">
             <img src="./assets/buzz.png" alt="Buzz" class="buzz">
             <h2>Bienvenue, <span id="nom-joueur"></span>!</h2>
+        </div>
     </div>
 
-
     <script src="./js/script.js"></script>
+    <script src="./js/eye.js"></script>
 </body>
 </html>
+
 
 
 
