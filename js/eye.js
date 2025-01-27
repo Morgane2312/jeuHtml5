@@ -5,7 +5,7 @@ function togglePasswordVisibility(toggleId, passwordId) {
     toggleIcon.addEventListener('click', () => {
         if (passwordInput.type === 'password') {
             passwordInput.type = 'text';
-            toggleIcon.src = './assets/eye-closed.png';
+            toggleIcon.src = './assets/eye2.png';
         } else {
             passwordInput.type = 'password';
             toggleIcon.src = './assets/eye.png';
