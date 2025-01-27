@@ -1,0 +1,132 @@
+/* Structure générale */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Sarabun", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #2B255C, #72B6E3);
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #2B255C;
+}
+
+.skin-selection {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.skin {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.skin:hover {
+    transform: scale(1.05);
+}
+
+.skin img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button.choose-skin {
+    background-color: #2B255C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+/* Effet au survol du bouton */
+button.choose-skin:hover {
+    background-color: #72B6E3;
+}
+
+/* Media Queries */
+
+/* Pour les petits écrans (mobiles) */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .skin-selection {
+        justify-content: center;
+    }
+
+    .skin {
+        width: 150px;
+        margin-bottom: 15px;
+    }
+
+    button.choose-skin {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Pour les tablettes et écrans moyens */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .skin {
+        width: 180px;
+    }
+
+    button.choose-skin {
+        font-size: 0.95rem;
+        padding: 9px 18px;
+    }
+}
+
+/* Grands écrans */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 900px;
+        padding: 30px;
+    }
+
+    .skin {
+        width: 220px;
+    }
+}

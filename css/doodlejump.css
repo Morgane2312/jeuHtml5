@@ -1,0 +1,38 @@
+body {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    touch-action: none;
+}
+
+#board {
+    background-image: url("../assets/bg.png");
+}
+
+button {
+    padding: 10px;
+    background: linear-gradient(150deg, #72B6E3, #2B255C);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #72B6E3, #2B255C);
+}
+
+#game-container {
+    touch-action: none; 
+    position: relative;
+    overflow: hidden;
+}
+
+canvas {
+    touch-action: none; 
+}
