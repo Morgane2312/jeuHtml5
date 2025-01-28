@@ -107,7 +107,7 @@ button.choose-skin:hover {
 @media (max-width: 768px) {
     .container {
         padding: 20px;
-        max-width: 90%;
+        max-width: 75%;
     }
 
     .skin-selection {
@@ -122,11 +122,11 @@ button.choose-skin:hover {
     }
 
     .skin-selection {
-        gap: 0;
+        gap: 15px;
     }
 
     .skin {
-        width: 60%;
+        width: 90%;
         padding: 10px;
     }
 

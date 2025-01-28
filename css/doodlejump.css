@@ -36,3 +36,26 @@ button:hover {
 canvas {
     touch-action: none; 
 }
+
+
+@media (max-width: 1080px) {
+    #game-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    #game-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #game-container {
+        max-width: 100%;
+    }
+
+    #board{
+        max-width: 100%;
+    }
+}
