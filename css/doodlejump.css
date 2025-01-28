@@ -42,6 +42,10 @@ canvas {
     #game-container {
         max-width: 100%;
     }
+
+    #board {
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -52,10 +56,6 @@ canvas {
 
 @media (max-width: 480px) {
     #game-container {
-        max-width: 100%;
-    }
-
-    #board{
         max-width: 100%;
     }
 }
