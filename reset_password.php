@@ -48,7 +48,7 @@ try {
         $mail->Host = "smtp.domaine.fr";
         $mail->Port = 587;
         $mail->Username = "nom.nomdefamille@domaine.fr";
-        $mail->Password = "motdepasse4321";
+        $mail->Password = "motdepasse";
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
         // Expéditeur
