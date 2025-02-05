@@ -1,5 +1,5 @@
 <?php
-$host = 'qsqslocalhost:8888/';
+$host = 'localhost';
 $dbname = 'buzz_jump';
 $username = 'root';
 $password = 'root';
