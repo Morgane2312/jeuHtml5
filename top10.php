@@ -43,6 +43,8 @@ try {
     <title>Top 10 Scores</title>
     <link rel="stylesheet" href="./css/top10.css">
     <link rel="stylesheet" href="./css/menu2.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
 <body>
     <header>
@@ -81,5 +83,8 @@ try {
     </div>
     <script src="./js/menu.js"></script>
     <script src="./js/deconnexion.js"></script>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
 </body>
 </html>

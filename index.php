@@ -109,6 +109,8 @@ ob_end_clean();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeu Bleuebuzz - Connexion</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link class="logo" rel="icon" type="image/png" href="./assets/logo.png"/>
 </head>
 <body>
@@ -182,6 +184,9 @@ ob_end_clean();
 
     <script src="./js/script.js"></script>
     <script src="./js/eye.js"></script>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
 </body>
 </html>
 

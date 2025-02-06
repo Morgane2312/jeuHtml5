@@ -94,6 +94,8 @@ try {
     <meta charset="UTF-8">
     <title>Réinitialisation du mot de passe</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
 <body>
     <div class="conteneur">
@@ -121,4 +123,7 @@ try {
     </div>
 </body>
 <script src="./js/script.js"></script>
+<script src="./js/bootstrap.bundle.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/bootstrap.js"></script>
 </html>

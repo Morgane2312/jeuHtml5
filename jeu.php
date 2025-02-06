@@ -75,6 +75,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Buzz Jump</title>
     <link rel="stylesheet" href="./css/doodlejump.css">
     <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
 <body>
     <div id="game-container">
@@ -96,5 +98,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script src="./js/score.js"></script>
     <script src="./js/menu.js"></script>
     <script src="./js/deconnexion.js"></script>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
 </body>
 </html>
