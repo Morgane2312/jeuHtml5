@@ -1,4 +1,5 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -73,30 +74,26 @@ try {
         $mail->send();
         echo json_encode(['status' => 'success', 'message' => 'Un email de réinitialisation a été envoyé.']);
         exit;
-
     } catch (Exception $e) {
         echo json_encode(['status' => 'error', 'message' => "L'email n'a pas pu être envoyé. Erreur : {$mail->ErrorInfo}"]);
         exit;
     }
-
-    } catch (PDOException $e) {
-        echo json_encode(['status' => 'error', 'message' => 'Erreur de base de données : ' . $e->getMessage()]);
-        exit;
-    }
+} catch (PDOException $e) {
+    echo json_encode(['status' => 'error', 'message' => 'Erreur de base de données : ' . $e->getMessage()]);
+    exit;
+}
 ?>
-
-
 
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Réinitialisation du mot de passe</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
+
 <body>
     <div class="conteneur">
         <h2>Réinitialisation du mot de passe</h2>
@@ -123,7 +120,5 @@ try {
     </div>
 </body>
 <script src="./js/script.js"></script>
-<script src="./js/bootstrap.bundle.js"></script>
-<script src="./js/bootstrap.min.js"></script>
-<script src="./js/bootstrap.js"></script>
+
 </html>
