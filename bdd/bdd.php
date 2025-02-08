@@ -2,7 +2,7 @@
 $host = 'localhost';
 $dbname = 'buzz_jump';
 $username = 'root';
-$password = 'root';
+$password = 'Aorus23';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);

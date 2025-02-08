@@ -21,8 +21,9 @@ let doodler = {
 // Physique
 let velocityX = 0;
 let velocityY = 0;
-let initialVelocityY = -9.5;
-let gravity = 0.4;
+let initialVelocityY = -5.7;
+let gravity = 0.125;
+
 
 // Plateformes
 let platformArray = [];
@@ -196,54 +197,14 @@ function update() {
 
     requestAnimationFrame(update);
 
-    const gameContainer = document.getElementById('game-container');
-
-    if (score >= 600) {
-        gameContainer.style.backgroundColor = "#621F51";
-    } else if (score >= 400) {
-        gameContainer.style.backgroundColor = "##486220";
-    } else if (score >= 200) {
-        gameContainer.style.backgroundColor = "#621F20";
-    } else {
-        gameContainer.style.backgroundColor = "#29235C";
-    }
-
-    if (score >= 200) {
-        backgroundImg = backgroundImg2;
-    }
-    if (score >= 140) {
-        platformImg = platformImg2;
-    }
-
-    if (score >= 400) {
-        backgroundImg2 = backgroundImg3;
-    }
-    if (score >= 340) {
-        platformImg2 = platformImg3;
-    }
-
-    if (score >= 600) {
-        backgroundImg3 = backgroundImg4;
-    }
-    if (score >= 540) {
-        platformImg3 = platformImg4;
-    }
-
-    if (score >= 800) {
-        backgroundImg4 = backgroundImg5;
-    }
-
-    if (score >= 740) {
-        platformImg3 = platformImg4;
-    }
-
-
     context.drawImage(backgroundImg, 0, 0, boardWidth, boardHeight);
 
+    // Déplacement horizontal
     doodler.x += velocityX;
     if (doodler.x > boardWidth) doodler.x = 0;
     if (doodler.x + doodler.width < 0) doodler.x = boardWidth;
 
+    // Gravité appliquée
     velocityY += gravity;
     doodler.y += velocityY;
 
@@ -290,11 +251,11 @@ function update() {
 function handleKeyDown(e) {
     if (jeuDemarre && !gameOver) {
         if (e.code === "ArrowRight" || e.code === "KeyD") {
-            velocityX = 4;
+            velocityX = 2.5;
             doodler.img = doodlerRightImg;
         }
         else if (e.code === "ArrowLeft" || e.code === "KeyA") {
-            velocityX = -4;
+            velocityX = -2.5;
             doodler.img = doodlerLeftImg;
         }
     }
