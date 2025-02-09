@@ -21,8 +21,8 @@ let doodler = {
 // Physique
 let velocityX = 0;
 let velocityY = 0;
-let initialVelocityY = -9;
-let gravity = 0.4;
+let initialVelocityY = -5;
+let gravity = 0.1;
 
 // Plateformes
 let platformArray = [];
