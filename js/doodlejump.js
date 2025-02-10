@@ -21,7 +21,7 @@ let doodler = {
 // Physique
 let velocityX = 0;
 let velocityY = 0;
-let initialVelocityY = -6;
+let initialVelocityY = -6.5;
 let gravity = 0.2;
 
 // Plateformes
