@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once './bdd/bdd.php';
+require_once './config/bdd.php';
 
 file_put_contents('debug_log.txt', "Données reçues : " . print_r($_POST, true) . "\n", FILE_APPEND);
 

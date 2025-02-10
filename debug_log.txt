@@ -26059,3 +26059,48 @@ Données reçues : Array
 (
 )
 
+Données reçues : Array
+(
+    [action] => deconnexion
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => inscription
+    [pseudo] => zejpzej
+    [email] => zejpzej@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => inscription
+    [pseudo] => zejpzej
+    [email] => zejpzej@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => inscription
+    [pseudo] => zejpzej
+    [email] => zejpzej@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => inscription
+    [pseudo] => zejpzej
+    [email] => zejpzej@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+)
+

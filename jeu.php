@@ -7,7 +7,7 @@ if (!isset($_SESSION['utilisateur'])) {
     exit;
 }
 
-require_once './bdd/bdd.php';
+require_once './config/bdd.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Content-Type: application/json');

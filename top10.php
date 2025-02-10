@@ -1,5 +1,5 @@
 <?php
-require_once './bdd/bdd.php';
+require_once './config/bdd.php';
 
 try {
     $stmt = $pdo->prepare("

@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 require './vendor/autoload.php';
-require_once './bdd/bdd.php';
+require_once './config/bdd.php';
 
 header('Content-Type: application/json');
 
