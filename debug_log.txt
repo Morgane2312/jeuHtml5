@@ -26104,3 +26104,503 @@ Données reçues : Array
 (
 )
 
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => deconnexion
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => inscription
+    [pseudo] => sqdqsds
+    [email] => sqdqsds@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => inscription
+    [pseudo] => qdqdqd
+    [email] => qdqdqd@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => inscription
+    [pseudo] => sqsq
+    [email] => sqsq@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => deconnexion
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => inscription
+    [pseudo] => kzn
+    [email] => kzn@gmail.com
+    [password] => kzn@gmail.com
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => inscription
+    [pseudo] => zza
+    [email] => zza@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => zza@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => zza@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => zza@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => zza@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => zza@gmail.com
+    [password] => &é"
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => zza@gmail.com
+    [password] => &é"
+)
+
+Données reçues : Array
+(
+    [action] => inscription
+    [pseudo] => ppa
+    [email] => ppa@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => ppa@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => ppa@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => inscription
+    [pseudo] => test
+    [email] => test@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 12"
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 12"
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 12"
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 12"
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 12"
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 12"
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 12"
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 12"
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 12"
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => morgane@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => deconnexion
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => morgane@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => deconnexion
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => inscription
+    [email] => jsp@gmail.com
+    [pseudo] => jsp
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => inscription
+    [email] => test@gmail.com
+    [pseudo] => tes
+    [password] => 123
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => morgane@gmail.com
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => deconnexion
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+    [action] => inscription
+    [email] => test@gmail.com
+    [pseudo] => test
+    [password] => 123
+)
+
+Données reçues : Array
+(
+    [action] => connexion
+    [email] => test@gmail.com
+    [password] => 123
+)
+

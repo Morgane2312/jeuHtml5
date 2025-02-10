@@ -8,29 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const lienRetourConnexion = document.getElementById('lien-retour-connexion');
     const messageErreur = document.getElementById('message-erreur');
 
-    // Vérifier que les éléments existent avant d'ajouter un event listener
     function ajouterEventListenerSiExiste(element, event, callback) {
         if (element) {
             element.addEventListener(event, callback);
         }
-    }
-
-    // Récupérer les valeurs pré-remplies si elles existent
-    const emailPreRempli = localStorage.getItem('emailPreRempli');
-    const passwordPreRempli = localStorage.getItem('passwordPreRempli');
-    if (emailPreRempli && passwordPreRempli) {
-        document.getElementById('connexion-email').value = emailPreRempli;
-        document.getElementById('connexion-password').value = passwordPreRempli;
-        localStorage.removeItem('emailPreRempli');
-        localStorage.removeItem('passwordPreRempli');
-    }
-
-    // Vérifier si l'utilisateur est déjà connecté
-    const estConnecte = localStorage.getItem('utilisateurConnecte') === 'true';
-    if (estConnecte) {
-        console.log("Utilisateur déjà connecté. Redirection vers jeu.php...");
-        window.location.href = "jeu.php";
-        return;
     }
 
     function afficherMessageErreur(message) {
@@ -54,43 +35,63 @@ document.addEventListener('DOMContentLoaded', function () {
         return regex.test(email);
     }
 
-    // Gestion des changements de formulaire (inscription, connexion, mdp oublié)
+    // Gestion du changement de formulaire
     ajouterEventListenerSiExiste(lienVersInscription, 'click', function (e) {
         e.preventDefault();
-        formulaireConnexion.classList.add('hidden');
-        formulaireMotDePasseOublie.classList.add('hidden');
-        formulaireInscription.classList.remove('hidden');
+        formulaireConnexion?.classList.add('hidden');
+        formulaireMotDePasseOublie?.classList.add('hidden');
+        formulaireInscription?.classList.remove('hidden');
         cacherMessageErreur();
     });
 
     ajouterEventListenerSiExiste(lienVersConnexion, 'click', function (e) {
         e.preventDefault();
-        formulaireInscription.classList.add('hidden');
-        formulaireMotDePasseOublie.classList.add('hidden');
-        formulaireConnexion.classList.remove('hidden');
+        formulaireInscription?.classList.add('hidden');
+        formulaireMotDePasseOublie?.classList.add('hidden');
+        formulaireConnexion?.classList.remove('hidden');
         cacherMessageErreur();
     });
 
     ajouterEventListenerSiExiste(lienMotDePasseOublie, 'click', function (e) {
         e.preventDefault();
-        formulaireConnexion.classList.add('hidden');
-        formulaireInscription.classList.add('hidden');
-        formulaireMotDePasseOublie.classList.remove('hidden');
+        formulaireConnexion?.classList.add('hidden');
+        formulaireInscription?.classList.add('hidden');
+        formulaireMotDePasseOublie?.classList.remove('hidden');
         cacherMessageErreur();
     });
 
     ajouterEventListenerSiExiste(lienRetourConnexion, 'click', function (e) {
         e.preventDefault();
-        formulaireMotDePasseOublie.classList.add('hidden');
-        formulaireInscription.classList.add('hidden');
-        formulaireConnexion.classList.remove('hidden');
+        formulaireMotDePasseOublie?.classList.add('hidden');
+        formulaireInscription?.classList.add('hidden');
+        formulaireConnexion?.classList.remove('hidden');
         cacherMessageErreur();
     });
+
+    // Vérifier si l'utilisateur est déjà connecté
+    const estConnecte = localStorage.getItem('utilisateurConnecte') === 'true';
+    if (estConnecte) {
+        console.log("Utilisateur déjà connecté. Redirection vers jeu.php...");
+        window.location.href = "jeu.php";
+        return;
+    }
+
+    // Vérifier et remplir les champs de connexion si pré-remplis
+    const emailPreRempli = localStorage.getItem('emailPreRempli');
+    const passwordPreRempli = localStorage.getItem('passwordPreRempli');
+    if (emailPreRempli && passwordPreRempli) {
+        document.getElementById('connexion-email').value = emailPreRempli;
+        document.getElementById('connexion-password').value = passwordPreRempli;
+        localStorage.removeItem('emailPreRempli');
+        localStorage.removeItem('passwordPreRempli');
+    }
+
+    // Gestion du formulaire d'inscription
     ajouterEventListenerSiExiste(formulaireInscription, 'submit', function (e) {
         e.preventDefault();
-        const pseudo = document.getElementById('inscription-pseudo').value.trim();
-        const email = document.getElementById('inscription-email').value.trim();
-        const password = document.getElementById('inscription-password').value.trim();
+        const pseudo = document.getElementById('inscription-pseudo')?.value.trim();
+        const email = document.getElementById('inscription-email')?.value.trim();
+        const password = document.getElementById('inscription-password')?.value.trim();
 
         if (!pseudo || !email || !password) {
             afficherMessageErreur("Veuillez remplir tous les champs.");
@@ -105,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch('./index.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams({ action: 'inscription', pseudo, email, password })
+            body: new URLSearchParams({ action: 'inscription', email, pseudo, password })
         })
         .then(response => response.json())
         .then(data => {
@@ -114,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 localStorage.setItem('emailPreRempli', email);
                 localStorage.setItem('passwordPreRempli', password);
                 alert(data.message);
-                lienVersConnexion.click();
+                lienVersConnexion?.click();
             } else {
                 afficherMessageErreur(data.message);
             }
@@ -125,10 +126,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Gestion du formulaire de connexion
     ajouterEventListenerSiExiste(formulaireConnexion, 'submit', function (e) {
         e.preventDefault();
-        const email = document.getElementById('connexion-email').value.trim();
-        const password = document.getElementById('connexion-password').value.trim();
+        const email = document.getElementById('connexion-email')?.value.trim();
+        const password = document.getElementById('connexion-password')?.value.trim();
 
         if (!email || !password) {
             afficherMessageErreur("Veuillez remplir tous les champs.");
@@ -146,12 +148,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (data.status === 'success') {
                 localStorage.setItem('utilisateurConnecte', 'true');
                 localStorage.setItem('email', email);
-                formulaireConnexion.classList.add('hidden');
+                formulaireConnexion?.classList.add('hidden');
                 document.getElementById('nom-joueur').textContent = data.pseudo;
-                document.getElementById('message-bienvenue').classList.remove('hidden');
+                document.getElementById('message-bienvenue')?.classList.remove('hidden');
 
                 setTimeout(() => {
-                    document.getElementById('message-bienvenue').classList.add('hidden');
+                    document.getElementById('message-bienvenue')?.classList.add('hidden');
                     window.location.href = "jeu.php";
                 }, 3000);
             } else {
@@ -164,9 +166,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Gestion du formulaire de mot de passe oublié
     ajouterEventListenerSiExiste(formulaireMotDePasseOublie, 'submit', function (e) {
         e.preventDefault();
-        const email = document.getElementById('mdp-oublie-email').value.trim();
+        const email = document.getElementById('mdp-oublie-email')?.value.trim();
 
         if (!email) {
             afficherMessageErreur("Veuillez entrer votre email.");
@@ -187,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             alert(data.message);
             if (data.status === 'success') {
-                lienVersConnexion.click();
+                lienVersConnexion?.click();
             } else {
                 afficherMessageErreur(data.message);
             }

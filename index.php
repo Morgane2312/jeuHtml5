@@ -8,7 +8,7 @@ try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    die(json_encode(['status' => 'error', 'message' => 'Erreur de connexion à la base de données.']));
+    die(json_encode(['status' => 'error', 'message' => 'Erreur de connexion à la base de données: ' . $e->getMessage()]));
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -22,26 +22,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!$pseudo || !$email || !$password) {
                 die(json_encode(['status' => 'error', 'message' => 'Tous les champs sont obligatoires.']));
             }
-
+    
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 die(json_encode(['status' => 'error', 'message' => 'Adresse email invalide.']));
             }
-
-            $stmt = $pdo->prepare("SELECT id FROM utilisateurs WHERE email = ? OR pseudo = ?");
+    
+            $stmt = $pdo->prepare("SELECT email FROM utilisateurs WHERE email = ? OR pseudo = ?");
             $stmt->execute([$email, $pseudo]);
             if ($stmt->fetch()) {
                 die(json_encode(['status' => 'error', 'message' => 'Email ou pseudo déjà utilisé.']));
             }
 
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $pdo->prepare("INSERT INTO utilisateurs (pseudo, email, password, highscore) VALUES (?, ?, ?, 0)");
-            $stmt->execute([$pseudo, $email, $passwordHash]);
-
+            $stmt = $pdo->prepare("INSERT INTO utilisateurs (email, pseudo, password, highscore, date_score) VALUES (:email, :pseudo, :password, 0, NULL)");
+            $stmt->execute([
+                ':email' => $email,
+                ':pseudo' => $pseudo,
+                ':password' => $passwordHash
+            ]);
+    
             die(json_encode(['status' => 'success', 'message' => 'Inscription réussie !']));
         } catch (PDOException $e) {
             die(json_encode(['status' => 'error', 'message' => 'Erreur lors de l\'inscription : ' . $e->getMessage()]));
         }
     }
+    
 
     if ($action === 'connexion') {
         try {
@@ -49,14 +54,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 die(json_encode(['status' => 'error', 'message' => 'Tous les champs sont obligatoires.']));
             }
 
-            $stmt = $pdo->prepare("SELECT pseudo, email, password FROM utilisateurs WHERE email = ?");
+            $stmt = $pdo->prepare("SELECT pseudo, email, password, highscore FROM utilisateurs WHERE email = ?");
             $stmt->execute([$email]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($user && password_verify($password, $user['password'])) {
                 $_SESSION['utilisateur'] = [
                     'pseudo' => $user['pseudo'],
-                    'email' => $user['email']
+                    'email' => $user['email'],
+                    'highscore' => $user['highscore']
                 ];
                 die(json_encode(['status' => 'success', 'message' => 'Connexion réussie !', 'pseudo' => $user['pseudo']]));
             } else {
@@ -73,7 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die(json_encode(['status' => 'success', 'message' => 'Déconnexion réussie.']));
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -84,8 +89,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Jeu Bleuebuzz - Connexion</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link class="logo" rel="icon" type="image/png" href="./assets/logo.png"/>
-
-    
 </head>
 <body>
     <div class="conteneur">
@@ -104,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     Pas de compte ? <a href="#" id="lien-vers-inscription">Inscrivez-vous</a>
                 </p>
                 <p class="texte-liens">
-                    <a href="#" id="lien-mdp-oublie">Mot de passe oublié ?</a>
+                    <a href="reset_password.php" id="lien-mdp-oublie">Mot de passe oublié ?</a>
                 </p>
             </form>
 
