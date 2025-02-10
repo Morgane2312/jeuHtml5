@@ -54,15 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return regex.test(email);
     }
 
-    // Gestion des changements de formulaire (inscription, connexion, mdp oublié)
-    ajouterEventListenerSiExiste(lienVersInscription, 'click', function (e) {
-        e.preventDefault();
-        formulaireConnexion.classList.add('hidden');
-        formulaireMotDePasseOublie.classList.add('hidden');
-        formulaireInscription.classList.remove('hidden');
-        cacherMessageErreur();
-    });
-
     ajouterEventListenerSiExiste(lienVersConnexion, 'click', function (e) {
         e.preventDefault();
         formulaireInscription.classList.add('hidden');
@@ -86,8 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
         formulaireConnexion.classList.remove('hidden');
         cacherMessageErreur();
     });
-
-    // 📌 Gestion du formulaire d'inscription
     ajouterEventListenerSiExiste(formulaireInscription, 'submit', function (e) {
         e.preventDefault();
         const pseudo = document.getElementById('inscription-pseudo').value.trim();
@@ -109,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams({ action: 'inscription', pseudo, email, password })
         })
-        .then(response => response.json()) // Correction ici : pas besoin de response.text()
+        .then(response => response.json())
         .then(data => {
             console.log("Réponse reçue :", data);
             if (data.status === 'success') {
@@ -127,7 +116,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // 📌 Gestion du formulaire de connexion
     ajouterEventListenerSiExiste(formulaireConnexion, 'submit', function (e) {
         e.preventDefault();
         const email = document.getElementById('connexion-email').value.trim();
@@ -167,7 +155,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // 📌 Gestion du formulaire de réinitialisation de mot de passe
     ajouterEventListenerSiExiste(formulaireMotDePasseOublie, 'submit', function (e) {
         e.preventDefault();
         const email = document.getElementById('mdp-oublie-email').value.trim();
