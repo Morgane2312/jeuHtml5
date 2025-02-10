@@ -54,6 +54,15 @@ document.addEventListener('DOMContentLoaded', function () {
         return regex.test(email);
     }
 
+    // Gestion des changements de formulaire (inscription, connexion, mdp oublié)
+    ajouterEventListenerSiExiste(lienVersInscription, 'click', function (e) {
+        e.preventDefault();
+        formulaireConnexion.classList.add('hidden');
+        formulaireMotDePasseOublie.classList.add('hidden');
+        formulaireInscription.classList.remove('hidden');
+        cacherMessageErreur();
+    });
+
     ajouterEventListenerSiExiste(lienVersConnexion, 'click', function (e) {
         e.preventDefault();
         formulaireInscription.classList.add('hidden');
