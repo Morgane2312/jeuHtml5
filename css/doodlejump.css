@@ -7,10 +7,15 @@ body {
     touch-action: none;
 }
 
+html, body {
+    margin: 10px;
+    padding: 5px;
+    overflow: hidden;
+}
 #board {
-    background-image: url("../assets/bg.png");
-    width: 400px;
-    height: 620px;
+    display: block;
+    width: 95vw;
+    height: 95vh;
 }
 
 button {

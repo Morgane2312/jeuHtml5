@@ -130,7 +130,7 @@ window.onload = function () {
         
         if(media1.matches){
 
-            board.style.height = "100%"
+            board.style.height = "1104"
             board.style.width = "100%"
 
         }else if(media2.matches){
@@ -140,7 +140,6 @@ window.onload = function () {
         }
     })
 };
-
 
 let touchStartX = 0;
 let touchCurrentX = 0;

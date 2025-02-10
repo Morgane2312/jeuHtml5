@@ -84,6 +84,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Jeu Bleuebuzz - Connexion</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link class="logo" rel="icon" type="image/png" href="./assets/logo.png"/>
+
+    
 </head>
 <body>
     <div class="conteneur">
