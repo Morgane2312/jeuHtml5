@@ -120,8 +120,25 @@ window.onload = function () {
     board.addEventListener("touchstart", handleTouchStart, { passive: true });
     board.addEventListener("touchmove", handleTouchMove, { passive: false });
     board.addEventListener("touchend", handleTouchEnd); 
-       
-    
+
+    const media1 = window.matchMedia("(max-width:1000px)");
+    const media2 = window.matchMedia("(min-width:1000px)");
+     
+    window.addEventListener('resize', function(){
+
+        console.log("Je me resize");
+        
+        if(media1.matches){
+
+            board.style.height = "100%"
+            board.style.width = "100%"
+
+        }else if(media2.matches){
+
+            board.style.height = "100%"
+            board.style.width = "100%"
+        }
+    })
 };
 
 let touchStartX = 0;
