@@ -22376,3 +22376,52 @@ Données reçues : Array
     [password] => 123
 )
 
+Données reçues : Array
+(
+    [action] => deconnexion
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
+Données reçues : Array
+(
+)
+
