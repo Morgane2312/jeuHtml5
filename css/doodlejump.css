@@ -9,6 +9,8 @@ body {
 
 #board {
     background-image: url("../assets/bg.png");
+    width: 400px;
+    height: 620px;
 }
 
 button {
@@ -44,7 +46,8 @@ canvas {
     }
 
     #board {
-        width: 100%;
+        width: auto;
+        height: auto;
     }
 }
 

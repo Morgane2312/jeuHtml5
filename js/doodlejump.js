@@ -21,8 +21,8 @@ let doodler = {
 // Physique
 let velocityX = 0;
 let velocityY = 0;
-let initialVelocityY = -5;
-let gravity = 0.1;
+let initialVelocityY = -6;
+let gravity = 0.2;
 
 // Plateformes
 let platformArray = [];
@@ -140,6 +140,7 @@ window.onload = function () {
         }
     })
 };
+
 
 let touchStartX = 0;
 let touchCurrentX = 0;
@@ -456,8 +457,14 @@ function enregistrerScore(score) {
     const email = localStorage.getItem('email');
     if (!email) {
         console.error("Impossible d'enregistrer le score : aucun email trouvé.");
+        afficherMessageScore("❌ Vous devez être connecté pour enregistrer un score.");
         return;
     }
+
+    console.log("🔄 Envoi du score...", { email, score });
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
 
     fetch('./jeu.php', {
         method: 'POST',
@@ -468,23 +475,31 @@ function enregistrerScore(score) {
             action: 'update_score',
             email: email,
             score: score
-        })
+        }),
+        signal: controller.signal
     })
-    .then(response => response.json())
+    .then(response => {
+        clearTimeout(timeoutId);
+
+        if (!response.ok) {
+            throw new Error(`Erreur HTTP : ${response.status}`);
+        }
+
+        return response.json();
+    })
     .then(data => {
+        console.log("✅ Réponse reçue :", data);
+
         if (data.status === 'success') {
-            console.log("Score enregistré avec succès !");
             afficherMessageScore(`🎉 Nouveau highscore ! Score : ${data.highscore}`);
         } else if (data.status === 'info') {
-            console.warn(`Score non mis à jour : ${data.message}`);
             afficherMessageScore(`😕 Votre score (${score}) est inférieur ou égal au highscore actuel (${data.highscore}).`);            
         } else {
-            console.error("Erreur :", data.message);
-            afficherMessageScore("❌ Erreur : " + data.message);
+            throw new Error(data.message || "Réponse inattendue du serveur.");
         }
     })
     .catch(error => {
-        console.error("Erreur de connexion au serveur :", error);
+        console.error("🚨 Erreur de connexion au serveur :", error);
         afficherMessageScore("❌ Problème de connexion au serveur.");
     });
 }
@@ -511,10 +526,9 @@ function afficherMessageScore(message) {
 
     setTimeout(() => {
         messageDiv.remove();
-    }, 3000); // Supprime le message après 3 secondes
+    }, 3000);
 }
 
-// 📌 Mets-la juste AVANT cette fonction :
 function afficherGameOver() {
     console.log("Email récupéré depuis le localStorage :", localStorage.getItem('email'));
 
