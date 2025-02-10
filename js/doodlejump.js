@@ -130,13 +130,13 @@ window.onload = function () {
         
         if(media1.matches){
 
-            board.style.height = "1104"
-            board.style.width = "100%"
+            board.style.height = "auto"
+            board.style.width = "auto"
 
         }else if(media2.matches){
 
-            board.style.height = "100%"
-            board.style.width = "100%"
+            board.style.height = "auto"
+            board.style.width = "auto"
         }
     })
 };
@@ -218,9 +218,11 @@ function update() {
 
     const gameContainer = document.getElementById('game-container');
 
-    if (score >= 600) {
+    if (score >= 800) {
+        gameContainer.style.backgroundColor = "#1F645F";
+    }else if  (score >= 600) {
         gameContainer.style.backgroundColor = "#621F51";
-    } else if (score >= 400) {
+    }else if (score >= 400) {
         gameContainer.style.backgroundColor = "#486220";
     } else if (score >= 200) {
         gameContainer.style.backgroundColor = "#621F20";
